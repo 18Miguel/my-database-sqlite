@@ -159,3 +159,7 @@ Get the columns of a specific table.
 #### `close(): void`
 
 Close the database connection.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/18Miguel/my-database-sqlite/blob/main/LICENSE) file for details.
