@@ -76,7 +76,7 @@ class MyDatabase {
      * Alter an existing table by adding, dropping, or modifying columns.
      * @param {string} tableName - The name of the table to be altered.
      * @param {AlterOperation} operation - The operation to be performed.
-     * Should be one of AlterOperation.ADD, AlterOperation.DROP, or AlterOperation.MODIFY.
+     * Should be one of AlterOperation.ADD or AlterOperation.DROP.
      * @param {...string} columns - An array of column definitions.
      * @returns {Promise<void>} A promise that resolves when the alteration is successful and rejects if an error occurs.
      * @throws {Error} If an invalid operation is provided.
