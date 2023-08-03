@@ -1,0 +1,21 @@
+{
+  "name": "my-database-sqlite",
+  "version": "1.0.0",
+  "description": "A simple SQLite database wrapper for Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "my-database-sqlite"
+  },
+  "author": "18Miguel",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
