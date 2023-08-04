@@ -173,11 +173,13 @@ class MyDatabase {
     /**
      * Retrieve rows from the table based on a condition.
      * @param {string} tableName - The name of the table.
+     * @param {string[]} [columns] - An array of column names to be selected. If not provided, all columns will be selected.
      * @param {string} [condition] - The select condition.
      * @returns {Promise<Object[]>} - A promise that resolves with the retrieved rows.
      */
-    selectRows(tableName, condition) {
-        const query = `SELECT * FROM ${tableName} ${condition || ''}`;
+    selectRows(tableName, columns, condition) {
+        const columnsToSelect = columns ? columns.join(', ') : '*';
+        const query = `SELECT ${columnsToSelect} FROM ${tableName} ${condition || ''}`;
 
         return new Promise((resolve, reject) => {
             this.#db.all(query, (error, rows) => {

@@ -23,7 +23,7 @@ async function runTests() {
         console.log('Departments:', await db.selectRows(DepartmentTable));
 
         await db.updateRow(UserTable, { age: 31 }, 'WHERE name = "John Doe"');
-        console.log('Updated Users:', await db.selectRows(UserTable));
+        console.log('Updated Users:', await db.selectRows(UserTable, ['id', 'name']));
 
         await db.insertRows(`${DepartmentTable}_${UserTable}`, { department_id: 1, user_id: 1 });
         await db.insertRows(`${DepartmentTable}_${UserTable}`, { department_id: 1, user_id: 2 });
