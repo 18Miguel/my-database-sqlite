@@ -156,6 +156,12 @@ Get the columns of a specific table.
 - `tableName` (string): The name of the table.
 - Returns: `Promise<{ name: string, type: string }[]>` - A promise that resolves with an array of column names for the specified table.
 
+#### `getAllData(): Promise<Object>`
+
+Get all data from all tables in the database.
+
+- Returns: `Promise<Object>` - A promise that resolves with an object representing all the data from all tables.
+
 #### `close(): void`
 
 Close the database connection.

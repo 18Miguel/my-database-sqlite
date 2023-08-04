@@ -29,6 +29,8 @@ async function runTests() {
         await db.insertRows(`${DepartmentTable}_${UserTable}`, { department_id: 1, user_id: 2 });
         console.log(`\nTable "${DepartmentTable}_${UserTable}":`, await db.selectRows(`${DepartmentTable}_${UserTable}`));
 
+        console.info('\nDATABASE: ', await db.getAllData(), '\n');
+
         await db.deleteRows(UserTable, 'WHERE name = "Jane Smith"');
         console.log('Remaining Users:', await db.selectRows(UserTable));
         console.log(`Remaining rows in "${DepartmentTable}_${UserTable}" table:`, await db.selectRows(`${DepartmentTable}_${UserTable}`));

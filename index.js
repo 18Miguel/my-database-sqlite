@@ -226,6 +226,26 @@ class MyDatabase {
     }
 
     /**
+     * Get all data from all tables in the database.
+     * @returns {Promise<Object>} A promise that resolves with an object representing all the data from all tables.
+     */
+    async getAllData() {
+        const allData = {};
+        const tables = await this.getAllTables();
+
+        return new Promise(async (resolve, reject) => {
+            for (const table of tables) {
+                const tableName = table.tableName;
+                await this.selectRows(tableName)
+                    .then(rows => allData[tableName] = rows)
+                    .catch(error => reject(error));
+            }
+            
+            resolve(allData);
+        });
+    }
+
+    /**
      * Close the database connection.
      */
     close() {
