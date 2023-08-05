@@ -193,7 +193,7 @@ class MyDatabase {
 
     /**
      * Get the names of all the tables in the database along with their respective columns.
-     * @returns {Promise<Promise<{ tableName: string, columns: { name: string, type: string }[] }[]>} - A promise that resolves with an array of objects representing each table and its columns.
+     * @returns {Promise<{ tableName: string, columns: { name: string, type: string }[] }[]>} - A promise that resolves with an array of objects representing each table and its columns.
      */    
     async getAllTables() {
         return await new Promise((resolve, reject) => {
